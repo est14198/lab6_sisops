@@ -1,4 +1,6 @@
 # Laboratorio 6
-### Maria Fernanda Estrada 14198
-#### Maria Fernanda Estrada 14198
-###### dddd
+
+#### Para compilar los programas
+##### gcc semaforo.c -o semaforo -lpthread -lrt
+#### Para generar el txt
+##### ./semaforo > BitacoraSemaforo.txt
