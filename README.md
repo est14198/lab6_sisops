@@ -1,1 +1,3 @@
-# lab6_sisops
+# Laboratorio 6
+#### Maria Fernanda Estrada 14198
+###### dddd
