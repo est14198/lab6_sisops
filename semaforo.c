@@ -20,7 +20,7 @@ sem_t mutex;
 
 
 // Metodo que ejecutara cada thread
-void* thread(void* arg) {
+void* function(void* arg) {
 	// Para saber que numero de thread se ejecuta
     int thread_id = syscall(SYS_gettid);
     printf("\nIniciando thread: %d", thread_id);
@@ -29,7 +29,7 @@ void* thread(void* arg) {
 
 	// for para "tomar" un recurso durante cierto tiempo
     for(i=0; i<QUANT_ITER; i++) {
-        printf("\nIniciando iteracion: %d", thread_id, i);
+        printf("\nIniciando iteracion: %d", i);
         
 		// wait si el recurso ya esta siendo usado
         sem_wait(&mutex);
@@ -65,7 +65,7 @@ int main() {
 
 	// for para inicializar cada thread    
 	for(i=0; i<QUANT_THREADS; i++) {
-        pthread_create(&threadArr[i], NULL, thread, NULL);
+        pthread_create(&threadArr[i], NULL, function, NULL);
     }
 
     printf("\nEsperando threads");
